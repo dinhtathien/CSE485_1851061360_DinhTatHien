@@ -1,5 +1,5 @@
 <?php
-    require('connect.php');
+    require('mysqli_connect.php');
     $user_name=$_SESSION["user"]["fullname"];
 
 // if (!isset($_SESSION['level'])) {
@@ -14,8 +14,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="assets/css/dashboard.css">
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="admin/style.css">
+    <link rel="stylesheet" type="text/css" href="admin/assets/css/style.css">
     <script src="admin/ckeditor/ckeditor.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
@@ -29,8 +29,8 @@
         <div class='sidebar'>
             <div class="sidebar-wrapper">
                 <div class="logo">
-                    <img class="img-logo" src="./image/anhdaidien.JPG" alt="Logo" />
-                    <a class="link-hcmedia" href="index.php" alt="Trang chủ">ĐINH TẤT HIÊN</a>
+                    <img class="img-logo" src="./images/anhdaidien.jpg" alt="Logo" />
+                    <a class="link-hcmedia" href="index.php" alt="Trang chủ">Đinh Tất Hiển</a>
                 </div>
                 <ul class="nav">
                     <li class="nav-item">
@@ -40,8 +40,8 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="index.php?category=home">
-                            <i class="nc-icon nc-grid-45"></i>
+                        <a class="nav-link" href="index.php?category=aboutme">
+                            <i class="nc-icon nc-single-02"></i>
                             <span class="nav-item-title">ABOUT ME</span>
                         </a>
                     </li>
@@ -50,67 +50,53 @@
                             <i class="nc-icon nc-single-copy-04"></i>
                             <span class="nav-item-title">RESUME<i class="fas fa-caret-down"></i></span>
                         </a>
-                        <ul class="nav collapse" id="component2">
+                        <ul class="nav collapse" id="component1">
                             <li class="nav-item nav-child">
-                                <a class="nav-link" href="index.php?category=manageAcc">
-                                    <span class="link-name-normal nav-item-title">Add Title</span>
-                                </a>
-                            </li>
-                        </ul>
-                        <ul class="nav collapse" id="component2">
-                            <li class="nav-item nav-child">
-                                <a class="nav-link" href="index.php?category=managePost">
-                                    <span class="link-name-normal nav-item-title">Add Content</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <!-- <li class="nav-item">
-                        <a class="nav-link" data-toggle="collapse" href="#component1">
-                            <i class="nc-icon nc-single-copy-04"></i>
-                            <span class="nav-item-title">SERVICES<i class="fas fa-caret-down"></i></span>
-                        </a>
-                        <ul class="nav collapse" id="component2">
-                            <li class="nav-item nav-child">
-                                <a class="nav-link" href="index.php?category=manageAcc">
-                                    <span class="link-name-normal nav-item-title">Add Title</span>
-                                </a>
-                            </li>
-                        </ul>
-                        <ul class="nav collapse" id="component2">
-                            <li class="nav-item nav-child">
-                                <a class="nav-link" href="index.php?category=managePost">
-                                    <span class="link-name-normal nav-item-title">Add Content</span>
+                                <a class="nav-link" href="index.php?category=manageResume">
+                                    <span class="link-name-normal nav-item-title">Manager Resume</span>
                                 </a>
                             </li>
                         </ul>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" data-toggle="collapse" href="#component2">
-                            <i class="nc-icon nc-single-02"></i>
-                            <span class="nav-item-title">PORTFOLIO<i class="fas fa-caret-down"></i></span>
+                            <i class="nc-icon nc-single-copy-04"></i>
+                            <span class="nav-item-title">SERVICES<i class="fas fa-caret-down"></i></span>
                         </a>
                         <ul class="nav collapse" id="component2">
                             <li class="nav-item nav-child">
-                                <a class="nav-link" href="index.php?category=manageAcc">
+                                <a class="nav-link" href="index.php?category=manageServices">
+                                    <span class="link-name-normal nav-item-title">Manager Services</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="collapse" href="#component3">
+                            <i class="nc-icon nc-single-copy-04"></i>
+                            <span class="nav-item-title">PORTFOLIO<i class="fas fa-caret-down"></i></span>
+                        </a>
+                        <ul class="nav collapse" id="component3">
+                            <li class="nav-item nav-child">
+                                <a class="nav-link" href="index.php?category=newPost">
                                     <span class="link-name-normal nav-item-title">Add Image</span>
                                 </a>
                             </li>
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" data-toggle="collapse" href="#component2">
+                        <a class="nav-link" data-toggle="collapse" href="#component4">
                             <i class="nc-icon nc-single-02"></i>
                             <span class="nav-item-title">ACC<i class="fas fa-caret-down"></i></span>
                         </a>
-                        <ul class="nav collapse" id="component2">
+                        <ul class="nav collapse" id="component4">
                             <li class="nav-item nav-child">
                                 <a class="nav-link" href="index.php?category=manageAcc">
                                     <span class="link-name-normal nav-item-title">Manager Accounts</span>
                                 </a>
                             </li>
                         </ul>
-                    </li> -->
+                    </li>
                 </ul>
             </div>
         </div>
@@ -140,7 +126,7 @@
                                         </a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="logout.php">
+                                        <a class="nav-link" href="./admin/logout.php">
                                             <i class="nc-icon nc-button-power"></i>
                                             <span class="link-name-normal text-danger">Logout</span>
                                         </a>
@@ -159,10 +145,13 @@
             }
             switch ($category) {
                 case "home":
-                    include('home.php');
+                    include('admin/home.php');
+                    break;
+                case "aboutme":
+                    include('admin/aboutme.php');
                     break;
                 case "newPost":
-                    include('newPosts.php');
+                    include('admin/newPosts.php');
                     break;
                 case "newAccount":
                     include('admin/newAccount.php');
@@ -170,8 +159,11 @@
                 case "manageAcc":
                     include('admin/manageAcc.php');
                     break;
-                case "managePost":
-                    include('admin/managePost.php');
+                case "manageServices":
+                    include('admin/manageServices.php');
+                    break;
+                case "manageResume":
+                    include('admin/manageResume.php');
                     break;
                 case "editacc":
                     include('admin/editacc.php');
@@ -180,7 +172,7 @@
                     include('changePassword.php');
                     break;
                 default:
-                    include('home.php');
+                    include('admin/home.php');
                     break;
             }
             ?>
@@ -203,7 +195,7 @@
     </script>
     <script src="js/editSubject.js"></script>
     <script src="js/changePass.js"></script>
-    <script src="assets/js/script.js"></script>
+    <script src="admin/assets/js/script.js"></script>
     <script src="admin/assets/js/index.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
     </script>
