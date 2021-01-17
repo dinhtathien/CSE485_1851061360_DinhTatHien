@@ -20,9 +20,10 @@ if (isset($_POST['sbm'])) {
         email = '$email',
         education = '$education',
         add = '$add'
+        where id = 1
     ";
     if(mysqli_query($conn,$sql)){
-        header("location: index.php?category=manageAcc");
+        header("location: index.php?category=home");
     }
     
 }

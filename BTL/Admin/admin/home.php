@@ -45,7 +45,7 @@
                             $rowCount = mysqli_fetch_array($count);
                         ?>
                         <div class="numbers">
-                            <p class="card-category">Image</p>
+                            <p class="card-category">Resume</p>
                             <h4 class="card-title"><?= $rowCount['SLNotify']; ?></h4>
                         </div>
                     </div>

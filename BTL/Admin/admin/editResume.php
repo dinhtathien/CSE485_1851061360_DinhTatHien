@@ -4,12 +4,12 @@ if (isset($_POST['sbm'])) {
     $title=$_POST['title'];
     $time=$_POST['time'];
     $add=$_POST['add'];
-    $content=$_POST['content'];
+    $contentPost =$_POST['contentPost'];
     $sql = "UPDATE resume 
     SET title='$title',
         time='$time',
-        add='$add',
-        content = $content
+        address='$add',
+        content = '$contentPost'
         WHERE id= $id
     ";
     if(mysqli_query($conn,$sql)){

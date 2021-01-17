@@ -7,7 +7,7 @@
                     <input type="text" class="textbox" placeholder="Search" />
                 </form>
                 <button title="Tìm kiếm" type="submit" class="button"><i class="fas fa-search"></i></button>
-                <a class="text-decoration-none ml-auto" href="index.php?category=newPost"><input type="button" class="btn btn-outline-secondary" value="Thêm Resume" /></a>
+                <a class="text-decoration-none ml-auto" href="index.php?category=newResume"><input type="button" class="btn btn-outline-secondary" value="Thêm Resume" /></a>
             </div>
         </div>
         <div class="card-body">
@@ -37,7 +37,7 @@
                             <td class="d-flex justify-content-end">
                                 <button type="button" class="btn btn-outline-secondary mr-2"><i class="fas fa-info"></i></button>
                                 <button type="button" class="btn btn-outline-info mr-2" ><a href="index.php?category=editRerume&id=<?php echo $posts['id'] ?>"><i class="fas fa-edit"></i></a></button>
-                                <button type="button" class="btn btn-outline-danger" ><a href="index.php?category=editRerume&id=<?php echo $posts['id'] ?>"><i class="fas fa-trash-alt"></i></a></button>
+                                <button type="button" class="btn btn-outline-danger" ><a href="admin/deleteResume.php?id=<?php echo $posts['id'] ?>"><i class="fas fa-trash-alt"></i></a></button>
                             </td>
                         </tr>
                         <?php }?>
@@ -47,5 +47,3 @@
         </div>
     </div>
 </div>
-<?php include('admin/editResume.php'); ?>
-<?php include('admin/confirmDelete.php'); ?>
