@@ -26,8 +26,7 @@ if (isset($_POST['sbm'])) {
 <div class="col-12 mt-3">
     <div class="card">
         <div class="card-header">
-            <h4 class="card-title">New Account</h4>
-            <p class="card-category">Cr</p>
+            <h4 class="card-title">Edit Account</h4>
         </div>
         <form role="form" method="post" enctype="multipart/form-data">
         <div class="card-body" id="newUserForm">

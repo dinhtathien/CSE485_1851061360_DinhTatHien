@@ -36,8 +36,8 @@
                             <td><?php echo $posts['content']; ?></td>
                             <td class="d-flex justify-content-end">
                                 <button type="button" class="btn btn-outline-secondary mr-2"><i class="fas fa-info"></i></button>
-                                <button type="button" class="btn btn-outline-info mr-2" data-toggle="modal" data-target="#editUser" data-user="<?=$rowUser['userID'];?>" id="editUserBtn" ><i class="fas fa-edit"></i></button>
-                                <button type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#confirm-delete" data-user="<?=$rowUser['userID'];?>" id ="deleteUserBtn"><i class="fas fa-trash-alt"></i></button>
+                                <button type="button" class="btn btn-outline-info mr-2" ><a href="index.php?category=editRerume&id=<?php echo $posts['id'] ?>"><i class="fas fa-edit"></i></a></button>
+                                <button type="button" class="btn btn-outline-danger" ><a href="index.php?category=editRerume&id=<?php echo $posts['id'] ?>"><i class="fas fa-trash-alt"></i></a></button>
                             </td>
                         </tr>
                         <?php }?>
@@ -47,5 +47,5 @@
         </div>
     </div>
 </div>
-<?php include('admin/modal/editPost.php'); ?>
-<?php include('admin/modal/confirmDelete.php'); ?>
+<?php include('admin/editResume.php'); ?>
+<?php include('admin/confirmDelete.php'); ?>
